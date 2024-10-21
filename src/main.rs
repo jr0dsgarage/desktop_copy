@@ -1,17 +1,21 @@
 use std::fs;
 use std::path::Path;
 use std::io::Read;
+use colored::*;
 
 fn main() {
     // Copy files from C:\Users\jarrod\AppData\Local\Microsoft\BingWallpaperApp\WPImages\
     // to \\vesuvius\pictures\Wallpapers\Bing\
     // only copying new or non-existent files
+    
 
     let src = "C:\\Users\\jarrod\\AppData\\Local\\Microsoft\\BingWallpaperApp\\WPImages\\";
     let dest = "\\\\vesuvius\\pictures\\Wallpapers\\Bing\\";
 
     let src_path = Path::new(src);
     let dest_path = Path::new(dest);
+
+    println!("Copying Bing Wallpapers\nfrom {}\n  to {}", src_path.display().to_string().cyan(), dest_path.display().to_string().bright_cyan());
 
     let src_files = match fs::read_dir(src_path) {
         Ok(files) => files,
@@ -38,17 +42,17 @@ fn main() {
         }
 
         if dest_file.exists() {
-            println!("File already exists: {:?}", dest_file);
+            println!("{} {}", "File already exists:".bright_red(), dest_file.display().to_string().bright_magenta());
             continue;
         }
         
         match fs::copy(file.path(), dest_file.clone()) {
-            Ok(_) => println!("Copied file: {:?}", dest_file),
+            Ok(_) => println!("{} {}", "Copied file:".bright_cyan(), dest_file.display().to_string().bright_magenta()),
             Err(e) => println!("Error copying file: {}", e),
         }
     }
     // pause so the window doesn't close
-    println!("Press any key to exit...");
+    println!("{}","Press Return to exit...".bright_green());
     let _ = std::io::stdin().read(&mut [0u8]).unwrap();
 
 }
