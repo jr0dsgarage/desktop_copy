@@ -14,7 +14,7 @@ fn main() {
     let src_path = Path::new(src);
     let dest_path = Path::new(dest);
 
-    println!("Copying Bing Wallpapers\nfrom {}\n  to {}", src_path.display().to_string().cyan(), dest_path.display().to_string().bright_cyan());
+    println!("Copying Bing Wallpapers\n from {}\n   to {}\n", src_path.display().to_string().bright_cyan(), dest_path.display().to_string().bright_cyan());
 
     let src_files = match fs::read_dir(src_path) {
         Ok(files) => files,
@@ -51,7 +51,7 @@ fn main() {
         }
     }
 
-    println!("{}","Press Return to exit...".bright_green());
+    println!("{}","\nPress Return to exit...".bright_green());
     let _ = std::io::stdin().read(&mut [0u8]).unwrap();
 
 }
