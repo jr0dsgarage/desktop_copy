@@ -4,6 +4,9 @@ use std::io::Read;
 use colored::*;
 
 fn main() {
+    if cfg!(target_os = "windows") {
+        control::set_virtual_terminal(true).unwrap();
+    }
 
     let src = "C:\\Users\\jarrod\\AppData\\Local\\Microsoft\\BingWallpaperApp\\WPImages\\";
     let dest = "\\\\vesuvius\\pictures\\Wallpapers\\Bing\\";
