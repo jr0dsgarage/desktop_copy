@@ -9,7 +9,7 @@ _rust must be installed https://www.rust-lang.org/tools/install_
 ```sh 
 git clone https://github.com/jr0dsgarage/desktop_copy.git
 ```
-2. in `main.rs`, near the top:
+2. in `/src/main.rs`, near the top:
    - Change the `src` directory string to your own source directory.
    - Change the `dest` directory string to your desired destination
 3. In a terminal, in the main desktop_copy directory, type
