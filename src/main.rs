@@ -4,10 +4,6 @@ use std::io::Read;
 use colored::*;
 
 fn main() {
-    // Copy files from C:\Users\jarrod\AppData\Local\Microsoft\BingWallpaperApp\WPImages\
-    // to \\vesuvius\pictures\Wallpapers\Bing\
-    // only copying new or non-existent files
-    
 
     let src = "C:\\Users\\jarrod\\AppData\\Local\\Microsoft\\BingWallpaperApp\\WPImages\\";
     let dest = "\\\\vesuvius\\pictures\\Wallpapers\\Bing\\";
@@ -51,7 +47,7 @@ fn main() {
             Err(e) => println!("Error copying file: {}", e),
         }
     }
-    // pause so the window doesn't close
+
     println!("{}","Press Return to exit...".bright_green());
     let _ = std::io::stdin().read(&mut [0u8]).unwrap();
 
