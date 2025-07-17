@@ -8,7 +8,7 @@ fn main() {
         control::set_virtual_terminal(true).unwrap();
     }
 
-    let src = "C:\\Users\\jarrod\\AppData\\Local\\Microsoft\\BingWallpaperApp\\WPImages\\";
+    let src = "C:\\Users\\jarrod\\AppData\\Local\\Packages\\Microsoft.BingWallpaper_8wekyb3d8bbwe\\LocalState\\images\\Bing";
     let dest = "\\\\vesuvius\\pictures\\Wallpapers\\Bing\\";
 
     let src_path = Path::new(src);
